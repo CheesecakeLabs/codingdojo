@@ -1,8 +1,5 @@
 import test from 'ava'
 
-// Longest Palindromic Substring
-// https://leetcode.com/problems/longest-palindromic-substring/
-
 const inputs = [
   'aba',
   'abad',

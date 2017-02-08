@@ -1,4 +1,15 @@
-# Distribuição de Mictórios
+# Python Template
+
+## Install
+Tested with Python 3.  
+Create a virtual environment and install the requirements with `pip install -r requirements.txt`
+
+## Run
+Run the tests with `nosetests --with-watch`
+
+# Challenge
+
+## Distribuição de Mictórios
 
 Um problema enfrentado pelos homens no uso de mictórios em banheiros públicos é o constrangimento causado por outro homem urinando no mictório ao lado. Uma situação contrangedora é definida quando dois "mijões" deveriam ocupar mictórios adjacentes.
 

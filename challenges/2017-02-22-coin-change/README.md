@@ -1,12 +1,3 @@
-# Go Template
-
-## Install
-You need Go! This was tested with version 1.8.  
-You'll also need [bro](https://github.com/marioidival/bro), a Go test runner with file watch. Install it with `go get github.com/marioidival/bro`.
-
-## Run
-On the directory, run `bro`.
-
 # Challenge
 
 **IMPORTANT:** We were not able to finish this challenge in our schedule time. So, yeah, life goes on.
@@ -46,4 +37,14 @@ Input: amount = 10, coins = [10]
 Output: 1
 ```
 
-Source: https://leetcode.com/problems/coin-change-2
+[Source](https://leetcode.com/problems/coin-change-2)
+
+# Go Template
+
+## Install
+You need Go! This was tested with version 1.8.  
+You'll also need [bro](https://github.com/marioidival/bro), a Go test runner with file watch. Install it with `go get github.com/marioidival/bro`.
+
+## Run
+On the directory, run `bro`.
+

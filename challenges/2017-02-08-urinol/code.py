@@ -16,7 +16,7 @@ def create_urinol(quantity, occupied):
 
     return urinol
 
-def get_position_of_mijoes(urinol):
+def get_position_of_users(urinol):
     aux = urinol[::]
     positions = []
     for i, urinol in enumerate(aux):
@@ -35,8 +35,8 @@ def get_position_of_mijoes(urinol):
             positions.append(i)
     return positions
 
-def get_number_of_mijoes(urinol):
-    return len(get_position_of_mijoes(urinol))
+def get_number_of_users(urinol):
+    return len(get_position_of_users(urinol))
 
 # Define your tests here
 class Testing(unittest.TestCase):
@@ -55,41 +55,41 @@ class Testing(unittest.TestCase):
             [URINOL_OCCUPIED, URINOL_FREE, URINOL_OCCUPIED, URINOL_FREE, URINOL_OCCUPIED]
         )
 
-    def test_get_number_of_mijoes(self):
+    def test_get_number_of_users(self):
         urinol = create_urinol(3, [0, 2])
-        self.assertEqual(            
-            get_number_of_mijoes(urinol),
+        self.assertEqual(
+            get_number_of_users(urinol),
             0
         )
 
         urinol = create_urinol(15, [0, 8, 12])
-        self.assertEqual(            
-            get_number_of_mijoes(urinol),
+        self.assertEqual(
+            get_number_of_users(urinol),
             5
         )
 
         urinol = create_urinol(11, [0, 3, 5, 10])
-        self.assertEqual(            
-            get_number_of_mijoes(urinol),
+        self.assertEqual(
+            get_number_of_users(urinol),
             1
         )
 
-    def test_get_position_of_mijoes(self):
+    def test_get_position_of_users(self):
         urinol = create_urinol(3, [0, 2])
-        self.assertEqual(            
-            get_position_of_mijoes(urinol),
+        self.assertEqual(
+            get_position_of_users(urinol),
             []
         )
 
         urinol = create_urinol(15, [0, 8, 12])
-        self.assertEqual(            
-            get_position_of_mijoes(urinol),
+        self.assertEqual(
+            get_position_of_users(urinol),
             [2, 4, 6, 10, 14]
         )
 
         urinol = create_urinol(11, [0, 3, 5, 10])
-        self.assertEqual(            
-            get_position_of_mijoes(urinol),
+        self.assertEqual(
+            get_position_of_users(urinol),
             [7]
         )
 

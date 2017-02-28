@@ -16,7 +16,7 @@ func Sum(array []int) int {
 
 func Combinations(amount int, coins []int) int {
 		total := 0
-		
+
 		for _, value := range(coins) {
 
 			newAmount := amount - value

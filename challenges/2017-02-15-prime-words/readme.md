@@ -1,20 +1,17 @@
 # Prime Words
 
-Um número primo é definido se ele possuir exatamente dois divisores: o número um e ele próprio.
-São exemplos de números primos: 2, 3, 5, 101, 367 e 523.
+A prime number is defined if it has exactly two divisors: the number one and itself. Examples are 2, 3, 5, 101, 367, 523.
 
-Neste problema, você deve ler uma palavra composta somente por letras [a-zA-Z]. Cada letra possui
-um valor específico, a vale 1, b vale 2 e assim por diante, até a letra z que vale 26. Do mesmo
-modo A vale 27, B vale 28, até a letra Z que vale 52.
+In this problem, you must read a word composed by only chars `[a-z][A-Z]`. Each char has a specific value: `a = 1`, `b = 2` until `z = 26`. Either way, `A = 27`, `B = 28` until `Z = 52`.
 
-Você precisa definir se cada palavra em um conjunto de palavras é prima ou não. Para ela ser prima,
-a soma dos valores de suas letras deve ser um número primo.
+You need to define if each word in a word set is prime or not. For it to be, the sum of the chars' value should be a primer number.
 
+[Source](http://dojopuzzles.com/problemas/exibe/palavras-primas/)
+
+# Javascript Template
 
 ## Install
-
 `npm install`
 
 ## Run
-
 `npm test`

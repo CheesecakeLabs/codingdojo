@@ -51,4 +51,3 @@ function getLongestPalindrome (value) {
   }
   return longest
 }
-

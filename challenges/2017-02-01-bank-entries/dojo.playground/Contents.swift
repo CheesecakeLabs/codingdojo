@@ -6,20 +6,20 @@ import XCTest
 
 class MainTests: XCTestCase {
     let inputInvalid = [
-        "[2017-01-32 10:20:22] - Abertura da porta OK",
-        "[2017-01-31 10:20:22] - Abertura da porta 2",
-        "[2017-22-31 10:20:22] - Abertura da porta OK"
+        "[2017-01-32 10:20:22] - Door open OK",
+        "[2017-01-31 10:20:22] - Door open",
+        "[2017-22-31 10:20:22] - Door open OK"
     ]
 
 
     let inputValid = [
-        "[2017-01-31 09:20:22] - Abertura da porta OK",
-        "[2017-01-31 10:20:22] - Abertura da porta OK",
-        "[2017-01-31 11:20:22] - Abertura da porta OK",
-        "[2017-01-31 12:20:22] - Abertura da porta OK",
-        "[2017-01-31 13:20:22] - Abertura da porta OK",
-        "[2017-01-31 17:20:22] - Abertura da porta OK",
-        "[2017-02-31 19:20:22] - Abertura da porta OK"
+        "[2017-01-31 09:20:22] - Door open OK",
+        "[2017-01-31 10:20:22] - Door open OK",
+        "[2017-01-31 11:20:22] - Door open OK",
+        "[2017-01-31 12:20:22] - Door open OK",
+        "[2017-01-31 13:20:22] - Door open OK",
+        "[2017-01-31 17:20:22] - Door open OK",
+        "[2017-02-31 19:20:22] - Door open OK"
     ]
 
     func testDates() {
@@ -89,7 +89,7 @@ class Main {
     }
 
     private func validateMessage(message: String) -> Bool {
-        if message != "Abertura da porta OK" { return false }
+        if message != "Door open OK" { return false }
         return true
     }
 

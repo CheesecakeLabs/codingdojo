@@ -18,3 +18,16 @@ Input: "cbbd"
 
 Output: "bb"
 ```
+
+[Source](https://leetcode.com/problems/longest-palindromic-substring/)
+
+# Javascript Template
+
+## Install
+
+`npm install`
+
+## Run
+
+`npm test`
+

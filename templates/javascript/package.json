@@ -13,6 +13,8 @@
     "babel-preset-latest": "^6.16.0"
   },
   "ava": {
-    "babel": "inherit"
+    "babel": {
+      "presets": ["latest"]
+    }
   }
 }

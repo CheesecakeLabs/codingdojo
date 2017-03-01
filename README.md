@@ -40,6 +40,8 @@ Also, here's a list of links with cool puzzles (if you know others, PR them too!
 - [LeetCode](https://leetcode.com/problemset/algorithms/)
 - [Facebook CodeLab](https://codelab.interviewbit.com/)
 - [CarrerCup](https://www.careercup.com/page)
+- [awesome-challenges (1)](https://github.com/mauriciovieira/awesome-challenges)
+- [awesome-challenges (2)](https://github.com/eliotsykes/awesome-challenges)
 
 ## Help
 If you need any help, just yell on the #codingdojo Slack channel, at Cheesecake Labs.

@@ -1,0 +1,20 @@
+{
+  "name": "dojo-javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava --watch index.js"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-preset-latest": "^6.16.0"
+  },
+  "ava": {
+    "babel": {
+      "presets": ["latest"]
+    }
+  }
+}

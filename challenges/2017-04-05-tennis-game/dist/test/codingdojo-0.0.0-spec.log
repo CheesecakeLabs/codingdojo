@@ -1,0 +1,10 @@
+Test suite spec: RUNNING...
+
+Code
+  next score
+    should add point to first player
+
+Finished in 0.0008 seconds
+1 example, 0 failures
+Test suite spec: PASS
+Test suite logged to: dist/test/codingdojo-0.0.0-spec.log

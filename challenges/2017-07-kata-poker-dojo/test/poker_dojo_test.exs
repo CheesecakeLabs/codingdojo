@@ -3,7 +3,7 @@ defmodule PokerDojoTest do
   alias PokerDojo.Deck
   alias PokerDojo.Deck.Card
 
-  test "the truth" do
-    assert Deck.test(%Card{rank: 1}) == 5
+  test "that plays work" do
+    assert Deck.eval([{10, :clubs}, {11, :clubs}, {12, :clubs}, {13, :clubs}, {14, :clubs}]) == 10
   end
 end

@@ -1,0 +1,23 @@
+{
+  "name": "dojo-javascript",
+  "version": "1.0.0",
+  "main": "index.test.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "babel-jest": "^19.0.0",
+    "jest": "^19.0.2"
+  },
+  "jest": {
+    "verbose": false,
+    "transform": {
+      ".*": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ]
+  }
+}

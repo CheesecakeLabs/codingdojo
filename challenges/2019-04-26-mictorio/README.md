@@ -50,7 +50,6 @@ To compute this, we group urinols in threes and then filter those which have no 
 def get_availables(urinols):
     availables = zip([0] + urinols[:-1], urinols, urinols[1:] + [0])
     return [ i[0] for i in enumerate(availables) if i[1] == (0, 0, 0) ]
-    return availables
 ```
 
 The function `get_peers()` goes one step further in order to compute the complete occupation. It starts out listing

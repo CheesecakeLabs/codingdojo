@@ -49,10 +49,7 @@ To compute this, we group urinols in threes and then filter those which have no 
 ```python
 def get_availables(urinols):
     availables = zip([0] + urinols[:-1], urinols, urinols[1:] + [0])
-    availables = zip(availables, range(len(availables)))
-    availables = [
-        i[1] for i in availables if i[0] == (0, 0, 0)
-    ]
+    return [ i[0] for i in enumerate(availables) if i[1] == (0, 0, 0) ]
     return availables
 ```
 

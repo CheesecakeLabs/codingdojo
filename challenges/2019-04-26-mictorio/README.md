@@ -42,7 +42,7 @@ So here are some test cases:
 To achieve this, we have defined two functions: `get_availables()` and `get_peers()`.
 
 The function `get_availables()` lists the urinols which don't have anyone besides them. We can interpret this as the
-options a man has if when given the initial state.
+options a man has when given the initial state.
 
 To compute this, we group urinols in threes and then filter those which have no `1`s:
 

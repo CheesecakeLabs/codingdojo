@@ -28,7 +28,7 @@ We define a function `fizz_buzz/1` that receives an `Integer` argument and retur
 `"FizzBuzz"` or the string representation of the number, depending on which of the cases the number falls into.
 
 We implement this by having a function defined multiple times with [guards clauses](https://hexdocs.pm/elixir/master/guards.html)
-to define which one will be used. The first matching patter will be used, so we define the most specific first:
+to define which one will be used. The first matching pattern will be used, so we define the most specific first:
 
 ```elixir
   def fizz_buzz(i) when rem(i, 3) == 0 and rem(i, 5) == 0, do: "FizzBuzz"

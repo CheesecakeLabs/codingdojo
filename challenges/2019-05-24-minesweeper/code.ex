@@ -22,61 +22,26 @@ defmodule Challenge do
   mesmo campo com as indicações de números de minas adjacentes em cada posição que não contenha uma mina.
   """
 
-  def replace('.'), do: 0
-  def replace(x) when is_nil(x), do: "IS NIL MOTHER LOVER"
-  def replace(x), do: x
+  def calculate(width, height, bombs) do
+    for x <- 0..width-1,
+        y <- 0..height-1 do
 
-  def replace_dots(row), do: Enum.map(row, &replace/1)
+      case Enum.member?(bombs, {x,y}) do
+        true  -> {{x,y}, '*'}
+        false -> {{x,y}, [
+          {x-1, y-1}, {x, y-1}, {x+1, y-1},
+          {x-1, y},             {x+1, y},
+          {x-1, y+1}, {x, y+1}, {x+1, y+1},
+        ]
+        |> Enum.filter(fn spot -> Enum.member?(bombs, spot) end)
+        |> Enum.count()
+                 }
+      end
 
-  def add_border(camp) do
-    height = Enum.count(camp)
-    width = Enum.count(List.first(camp))
-
-    first_and_last = [0]
-      |> Stream.cycle
-      |> Enum.take(width)
-
-    [first_and_last] ++ camp ++ [first_and_last]
-    |> Enum.map(fn x -> [0] ++ replace_dots(x) ++ [0] end)
+    end
+    |> Map.new()
   end
 
-  def pulo_do_gato(num, width, height) do
-    max_num = width*height
-
-    [
-      num-1, num, num+1,
-      num-1+width, num+width, num+1+width,
-      num-1-width, num-width, num+1-width,
-    ]
-    |> Enum.filter( fn x -> x > 0 or x < max_num end )
-  end
-
-  def get_camp_value(flat_camp, x) do
-    Enum.at(flat_camp, x)
-  end
-
-  def test(camp, width, height) do
-    camp_f =
-      camp
-      |> add_border()
-      |> List.flatten()
-
-    0
-    |> Stream.iterate(fn x -> x + 1 end)
-    |> Enum.take(width*height)
-    |> Enum.map(fn x -> pulo_do_gato(x, width, height) end)
-    |> IO.inspect()
-#    |> Enum.map(fn x -> Enum.map(Enum.at(camp_f, x)) end)
-  end
-
-  def calculate(camp) do
-    height = Enum.count(camp)
-    width = Enum.count(List.first(camp))
-
-    test(camp, width, height)
-
-#    [['*', 1, 0, 0], [2, 2, 1, 0], [1, '*', 1, 0], [1, 1, 1, 0]]
-  end
 end
 
 ExUnit.start
@@ -85,21 +50,24 @@ defmodule ChallengeTest do
   use ExUnit.Case
 
   test "end_to_end" do
-    assert Challenge.calculate(
-             [['*', '.', '.', '.'], ['.', '.', '.', '.'], ['.', '*', '.', '.'], ['.', '.', '.', '.']]
-           ) == [['*', 1, 0, 0], [2, 2, 1, 0], [1, '*', 1, 0], [1, 1, 1, 0]]
+    assert Challenge.calculate(4, 4, [{0,0}, {1,2}]) == %{
+             {0, 0} => '*',
+             {0, 1} => 2,
+             {0, 2} => 1,
+             {0, 3} => 1,
+             {1, 0} => 1,
+             {1, 1} => 2,
+             {1, 2} => '*',
+             {1, 3} => 1,
+             {2, 0} => 0,
+             {2, 1} => 1,
+             {2, 2} => 1,
+             {2, 3} => 1,
+             {3, 0} => 0,
+             {3, 1} => 0,
+             {3, 2} => 0,
+             {3, 3} => 0,
+           }
   end
 
-#  a + b == Kernel.+(a, b)
-
-  test "add_border" do
-    assert Challenge.add_border(
-             [['*', '.', '.', '.'], ['.', '.', '.', '.'], ['.', '*', '.', '.'], ['.', '.', '.', '.']]
-           ) == [[0, 0, 0, 0, 0, 0],
-                 [0, '*', 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0],
-                 [0, 0, '*', 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0]]
-  end
 end
